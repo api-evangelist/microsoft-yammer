@@ -1,5 +1,5 @@
 aid: microsoft-yammer
-name: Microsoft Yammer APIs
+name: Microsoft Yammer
 description: APIs for Yammer (now Viva Engage) enterprise social networking platform providing access to messages, groups, users, and networks.
 type: Index
 image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
