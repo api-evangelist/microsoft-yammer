@@ -4,11 +4,11 @@ description: APIs for Yammer (now Viva Engage) enterprise social networking plat
 type: Index
 image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
 tags:
-- Social Networking
-- Enterprise Social
-- Viva Engage
-- Yammer
-- Microsoft
+  - Enterprise Social
+  - Microsoft
+  - Social Networking
+  - Viva Engage
+  - Yammer
 created: '2024-01-01'
 modified: '2026-03-16'
 specificationVersion: '0.19'
@@ -17,8 +17,8 @@ apis:
   - aid: microsoft-yammer:rest-api
     name: Yammer REST API
     tags:
-      - Social Networking
       - Enterprise Social
+      - Social Networking
       - Viva Engage
     image: https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
     baseURL: https://www.yammer.com/api/v1/
