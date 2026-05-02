@@ -1,27 +1,29 @@
 # Microsoft Yammer (microsoft-yammer)
-Microsoft Yammer (now Viva Engage) provides enterprise social networking APIs for messages, groups, users, and content management.
+APIs for Yammer (now Viva Engage) enterprise social networking platform providing access to messages, groups, users, and networks.
 
 **URL:** [Visit APIs.json URL](https://raw.githubusercontent.com/api-evangelist/microsoft-yammer/refs/heads/main/apis.yml)
 
 ## Tags:
 
- - Social Networking, Enterprise Social, Viva Engage, Collaboration
+ - Enterprise Social, Microsoft, Social Networking, Viva Engage, Yammer
 
 ## Timestamps
 
-- **Created:** 2026-03-13
-- **Modified:** 2026-03-13
+- **Created:** 2024-01-01
+- **Modified:** 2026-04-28
 
 ## APIs
 
 ### Yammer REST API
-The Yammer REST API provides access to enterprise social networking features including messages, groups, users, and networks.
+The Yammer REST API (now Viva Engage) provides access to enterprise social networking features including messages, groups, users, and networks. Developers can post messages, manage group memberships, search content, and integrate Yammer's social collaboration features into custom applications.
 
 **Human URL:** [https://learn.microsoft.com/en-us/rest/api/yammer/rest-api-rate-limits](https://learn.microsoft.com/en-us/rest/api/yammer/rest-api-rate-limits)
 
+**Base URL:** https://www.yammer.com/api/v1/
+
 #### Tags:
 
- - Social Networking, Enterprise Social, Viva Engage
+ - Enterprise Social, Social Networking, Viva Engage
 
 #### Properties
 
