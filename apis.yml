@@ -33,6 +33,10 @@ apis:
       search content, and integrate Yammer's social collaboration features
       into custom applications.
 common:
+  - type: GitHubOrganization
+    url: https://github.com/yammer
+  - type: LinkedIn
+    url: https://www.linkedin.com/company/yammer-inc
   - type: Portal
     url: https://engage.cloud.microsoft/
   - type: Authentication
