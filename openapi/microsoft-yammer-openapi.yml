@@ -1,0 +1,409 @@
+openapi: 3.1.0
+info:
+  title: Viva Engage (Yammer) Legacy REST API
+  description: |
+    Legacy Viva Engage (Yammer) REST API for messages, threads, topics, groups, users,
+    subscriptions, and search. Sourced from
+    https://learn.microsoft.com/en-us/rest/api/yammer/. Only v1 endpoints are supported.
+    Authentication uses Yammer OAuth 2.0 legacy tokens or Microsoft Entra tokens
+    (delegated access only).
+  version: '1.0'
+  contact:
+    name: Viva Engage (Yammer) API
+    url: https://learn.microsoft.com/en-us/rest/api/yammer/
+servers:
+  - url: https://www.yammer.com/api/v1
+    description: Yammer Core REST API v1
+security:
+  - OAuth2: []
+paths:
+  /messages/my_feed.json:
+    get:
+      summary: Get current user's feed messages
+      operationId: getMyFeed
+      tags: [Messages]
+      responses:
+        '200':
+          description: Messages
+  /messages/algo.json:
+    get:
+      summary: Get algorithmically sorted messages
+      operationId: getAlgoMessages
+      tags: [Messages]
+      responses:
+        '200':
+          description: Messages
+  /messages/following.json:
+    get:
+      summary: Get messages from followed users
+      operationId: getFollowingMessages
+      tags: [Messages]
+      responses:
+        '200':
+          description: Messages
+  /messages.json:
+    get:
+      summary: Get messages from user's network feed
+      operationId: listMessages
+      tags: [Messages]
+      responses:
+        '200':
+          description: Messages
+    post:
+      summary: Post a new message
+      operationId: postMessage
+      tags: [Messages]
+      requestBody:
+        required: true
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              type: object
+              properties:
+                body: { type: string }
+                group_id: { type: integer }
+                replied_to_id: { type: integer }
+                direct_to_id: { type: integer }
+                topic1: { type: string }
+      responses:
+        '201':
+          description: Created
+  /messages/sent.json:
+    get:
+      summary: Get messages sent by the current user
+      operationId: getSentMessages
+      tags: [Messages]
+      responses:
+        '200':
+          description: Messages
+  /messages/private.json:
+    get:
+      summary: Get private messages received by current user
+      operationId: getPrivateMessages
+      tags: [Messages]
+      responses:
+        '200':
+          description: Messages
+  /messages/received.json:
+    get:
+      summary: Get messages received by current user
+      operationId: getReceivedMessages
+      tags: [Messages]
+      responses:
+        '200':
+          description: Messages
+  /messages/in_thread/{thread_id}.json:
+    get:
+      summary: Get messages in a thread
+      operationId: getMessagesInThread
+      tags: [Messages]
+      parameters:
+        - name: thread_id
+          in: path
+          required: true
+          schema: { type: integer }
+      responses:
+        '200':
+          description: Messages
+  /messages/in_group/{group_id}.json:
+    get:
+      summary: Get messages in a group
+      operationId: getMessagesInGroup
+      tags: [Messages]
+      parameters:
+        - name: group_id
+          in: path
+          required: true
+          schema: { type: integer }
+      responses:
+        '200':
+          description: Messages
+  /messages/about_topic/{id}.json:
+    get:
+      summary: Get messages about a topic
+      operationId: getMessagesAboutTopic
+      tags: [Messages]
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema: { type: integer }
+      responses:
+        '200':
+          description: Messages
+  /messages/liked_by/current.json:
+    post:
+      summary: Like a message
+      operationId: likeMessage
+      tags: [Messages]
+      parameters:
+        - name: message_id
+          in: query
+          required: true
+          schema: { type: integer }
+      responses:
+        '201':
+          description: Liked
+    delete:
+      summary: Unlike a message
+      operationId: unlikeMessage
+      tags: [Messages]
+      parameters:
+        - name: message_id
+          in: query
+          required: true
+          schema: { type: integer }
+      responses:
+        '204':
+          description: Unliked
+  /messages/{id}.json:
+    delete:
+      summary: Delete a message
+      operationId: deleteMessage
+      tags: [Messages]
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema: { type: integer }
+      responses:
+        '204':
+          description: Deleted
+  /uploaded_files/{id}.json:
+    delete:
+      summary: Delete an uploaded file
+      operationId: deleteUploadedFile
+      tags: [Files]
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema: { type: integer }
+      responses:
+        '204':
+          description: Deleted
+  /threads/{id}.json:
+    get:
+      summary: Get thread details
+      operationId: getThread
+      tags: [Threads]
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema: { type: integer }
+      responses:
+        '200':
+          description: Thread
+  /topics/{id}.json:
+    get:
+      summary: Get topic details
+      operationId: getTopic
+      tags: [Topics]
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema: { type: integer }
+      responses:
+        '200':
+          description: Topic
+  /group_memberships.json:
+    post:
+      summary: Add a user to a group
+      operationId: addGroupMembership
+      tags: [Groups]
+      parameters:
+        - name: group_id
+          in: query
+          required: true
+          schema: { type: integer }
+      responses:
+        '201':
+          description: Added
+    delete:
+      summary: Remove a user from a group
+      operationId: removeGroupMembership
+      tags: [Groups]
+      parameters:
+        - name: group_id
+          in: query
+          required: true
+          schema: { type: integer }
+      responses:
+        '204':
+          description: Removed
+  /groups/for_user/{user_id}.json:
+    get:
+      summary: Get groups for a user
+      operationId: getGroupsForUser
+      tags: [Groups]
+      parameters:
+        - name: user_id
+          in: path
+          required: true
+          schema: { type: integer }
+      responses:
+        '200':
+          description: Groups
+  /users.json:
+    get:
+      summary: List users
+      operationId: listUsers
+      tags: [Users]
+      responses:
+        '200':
+          description: Users
+    post:
+      summary: Create a new user
+      operationId: createUser
+      tags: [Users]
+      requestBody:
+        required: true
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              type: object
+              properties:
+                email: { type: string }
+                full_name: { type: string }
+      responses:
+        '201':
+          description: Created
+  /users/current.json:
+    get:
+      summary: Get current user profile
+      operationId: getCurrentUser
+      tags: [Users]
+      responses:
+        '200':
+          description: User
+  /users/{id}.json:
+    get:
+      summary: Get a user profile by id
+      operationId: getUser
+      tags: [Users]
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema: { type: integer }
+      responses:
+        '200':
+          description: User
+    put:
+      summary: Update a user's profile
+      operationId: updateUser
+      tags: [Users]
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema: { type: integer }
+      requestBody:
+        required: true
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              type: object
+      responses:
+        '200':
+          description: Updated
+    delete:
+      summary: Delete a user
+      operationId: deleteUser
+      tags: [Users]
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema: { type: integer }
+      responses:
+        '204':
+          description: Deleted
+  /users/by_email.json:
+    get:
+      summary: Get user profile by email
+      operationId: getUserByEmail
+      tags: [Users]
+      parameters:
+        - name: email
+          in: query
+          required: true
+          schema: { type: string, format: email }
+      responses:
+        '200':
+          description: User
+  /users/in_group/{id}.json:
+    get:
+      summary: Get users in a group
+      operationId: getUsersInGroup
+      tags: [Users]
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema: { type: integer }
+      responses:
+        '200':
+          description: Users
+  /subscriptions/to_topic/{id}.json:
+    get:
+      summary: Get subscriptions to a topic
+      operationId: getTopicSubscriptions
+      tags: [Subscriptions]
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema: { type: integer }
+      responses:
+        '200':
+          description: Subscriptions
+  /subscriptions:
+    post:
+      summary: Subscribe to a topic or user
+      operationId: createSubscription
+      tags: [Subscriptions]
+      responses:
+        '201':
+          description: Subscribed
+    delete:
+      summary: Unsubscribe from a topic or user
+      operationId: deleteSubscription
+      tags: [Subscriptions]
+      responses:
+        '204':
+          description: Unsubscribed
+  /search.json:
+    get:
+      summary: Search messages, users, and topics
+      operationId: search
+      tags: [Search]
+      parameters:
+        - name: search
+          in: query
+          required: true
+          schema: { type: string }
+      responses:
+        '200':
+          description: Results
+  /networks/current.json:
+    get:
+      summary: Get current network details
+      operationId: getCurrentNetwork
+      tags: [Networks]
+      responses:
+        '200':
+          description: Network
+components:
+  securitySchemes:
+    OAuth2:
+      type: oauth2
+      description: |
+        Yammer OAuth 2.0 legacy tokens or Microsoft Entra tokens. Delegated access only.
+      flows:
+        authorizationCode:
+          authorizationUrl: https://www.yammer.com/dialog/oauth
+          tokenUrl: https://www.yammer.com/oauth2/access_token.json
+          scopes: {}
