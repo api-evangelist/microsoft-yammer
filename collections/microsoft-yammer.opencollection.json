@@ -1,0 +1,632 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Viva Engage (Yammer) Legacy REST API",
+    "version": "1.0"
+  },
+  "request": {
+    "auth": {
+      "type": "oauth2",
+      "flow": "authorization_code",
+      "authorizationUrl": "https://www.yammer.com/dialog/oauth",
+      "accessTokenUrl": "https://www.yammer.com/oauth2/access_token.json",
+      "credentials": {
+        "clientId": "{{clientId}}",
+        "clientSecret": "{{clientSecret}}"
+      }
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Messages",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get current user's feed messages",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://www.yammer.com/api/v1/messages/my_feed.json"
+          },
+          "docs": "Get current user's feed messages"
+        },
+        {
+          "info": {
+            "name": "Get algorithmically sorted messages",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://www.yammer.com/api/v1/messages/algo.json"
+          },
+          "docs": "Get algorithmically sorted messages"
+        },
+        {
+          "info": {
+            "name": "Get messages from followed users",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://www.yammer.com/api/v1/messages/following.json"
+          },
+          "docs": "Get messages from followed users"
+        },
+        {
+          "info": {
+            "name": "Get messages from user's network feed",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://www.yammer.com/api/v1/messages.json"
+          },
+          "docs": "Get messages from user's network feed"
+        },
+        {
+          "info": {
+            "name": "Post a new message",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://www.yammer.com/api/v1/messages.json",
+            "body": {
+              "type": "form-urlencoded",
+              "data": [
+                {
+                  "name": "body",
+                  "value": ""
+                },
+                {
+                  "name": "group_id",
+                  "value": ""
+                },
+                {
+                  "name": "replied_to_id",
+                  "value": ""
+                },
+                {
+                  "name": "direct_to_id",
+                  "value": ""
+                },
+                {
+                  "name": "topic1",
+                  "value": ""
+                }
+              ]
+            }
+          },
+          "docs": "Post a new message"
+        },
+        {
+          "info": {
+            "name": "Get messages sent by the current user",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://www.yammer.com/api/v1/messages/sent.json"
+          },
+          "docs": "Get messages sent by the current user"
+        },
+        {
+          "info": {
+            "name": "Get private messages received by current user",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://www.yammer.com/api/v1/messages/private.json"
+          },
+          "docs": "Get private messages received by current user"
+        },
+        {
+          "info": {
+            "name": "Get messages received by current user",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://www.yammer.com/api/v1/messages/received.json"
+          },
+          "docs": "Get messages received by current user"
+        },
+        {
+          "info": {
+            "name": "Get messages in a thread",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://www.yammer.com/api/v1/messages/in_thread/:thread_id.json",
+            "params": [
+              {
+                "name": "thread_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Get messages in a thread"
+        },
+        {
+          "info": {
+            "name": "Get messages in a group",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://www.yammer.com/api/v1/messages/in_group/:group_id.json",
+            "params": [
+              {
+                "name": "group_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Get messages in a group"
+        },
+        {
+          "info": {
+            "name": "Get messages about a topic",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://www.yammer.com/api/v1/messages/about_topic/:id.json",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Get messages about a topic"
+        },
+        {
+          "info": {
+            "name": "Like a message",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://www.yammer.com/api/v1/messages/liked_by/current.json",
+            "params": [
+              {
+                "name": "message_id",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Like a message"
+        },
+        {
+          "info": {
+            "name": "Unlike a message",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://www.yammer.com/api/v1/messages/liked_by/current.json",
+            "params": [
+              {
+                "name": "message_id",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Unlike a message"
+        },
+        {
+          "info": {
+            "name": "Delete a message",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://www.yammer.com/api/v1/messages/:id.json",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Delete a message"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Files",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Delete an uploaded file",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://www.yammer.com/api/v1/uploaded_files/:id.json",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Delete an uploaded file"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Threads",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get thread details",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://www.yammer.com/api/v1/threads/:id.json",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Get thread details"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Topics",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get topic details",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://www.yammer.com/api/v1/topics/:id.json",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Get topic details"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Groups",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Add a user to a group",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://www.yammer.com/api/v1/group_memberships.json",
+            "params": [
+              {
+                "name": "group_id",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Add a user to a group"
+        },
+        {
+          "info": {
+            "name": "Remove a user from a group",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://www.yammer.com/api/v1/group_memberships.json",
+            "params": [
+              {
+                "name": "group_id",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Remove a user from a group"
+        },
+        {
+          "info": {
+            "name": "Get groups for a user",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://www.yammer.com/api/v1/groups/for_user/:user_id.json",
+            "params": [
+              {
+                "name": "user_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Get groups for a user"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Users",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List users",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://www.yammer.com/api/v1/users.json"
+          },
+          "docs": "List users"
+        },
+        {
+          "info": {
+            "name": "Create a new user",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://www.yammer.com/api/v1/users.json",
+            "body": {
+              "type": "form-urlencoded",
+              "data": [
+                {
+                  "name": "email",
+                  "value": ""
+                },
+                {
+                  "name": "full_name",
+                  "value": ""
+                }
+              ]
+            }
+          },
+          "docs": "Create a new user"
+        },
+        {
+          "info": {
+            "name": "Get current user profile",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://www.yammer.com/api/v1/users/current.json"
+          },
+          "docs": "Get current user profile"
+        },
+        {
+          "info": {
+            "name": "Get a user profile by id",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://www.yammer.com/api/v1/users/:id.json",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Get a user profile by id"
+        },
+        {
+          "info": {
+            "name": "Update a user's profile",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://www.yammer.com/api/v1/users/:id.json",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "form-urlencoded",
+              "data": []
+            }
+          },
+          "docs": "Update a user's profile"
+        },
+        {
+          "info": {
+            "name": "Delete a user",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://www.yammer.com/api/v1/users/:id.json",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Delete a user"
+        },
+        {
+          "info": {
+            "name": "Get user profile by email",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://www.yammer.com/api/v1/users/by_email.json",
+            "params": [
+              {
+                "name": "email",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Get user profile by email"
+        },
+        {
+          "info": {
+            "name": "Get users in a group",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://www.yammer.com/api/v1/users/in_group/:id.json",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Get users in a group"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Subscriptions",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get subscriptions to a topic",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://www.yammer.com/api/v1/subscriptions/to_topic/:id.json",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Get subscriptions to a topic"
+        },
+        {
+          "info": {
+            "name": "Subscribe to a topic or user",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://www.yammer.com/api/v1/subscriptions"
+          },
+          "docs": "Subscribe to a topic or user"
+        },
+        {
+          "info": {
+            "name": "Unsubscribe from a topic or user",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://www.yammer.com/api/v1/subscriptions"
+          },
+          "docs": "Unsubscribe from a topic or user"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Search",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Search messages, users, and topics",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://www.yammer.com/api/v1/search.json",
+            "params": [
+              {
+                "name": "search",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Search messages, users, and topics"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Networks",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get current network details",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://www.yammer.com/api/v1/networks/current.json"
+          },
+          "docs": "Get current network details"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}
