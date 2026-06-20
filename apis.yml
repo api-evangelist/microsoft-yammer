@@ -2,7 +2,7 @@ aid: microsoft-yammer
 name: Microsoft Yammer
 description: APIs for Yammer (now Viva Engage) enterprise social networking platform providing access to messages, groups, users, and networks.
 type: Index
-image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
 tags:
   - Enterprise Social
   - Microsoft
@@ -20,7 +20,7 @@ apis:
       - Enterprise Social
       - Social Networking
       - Viva Engage
-    image: https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
     baseURL: https://www.yammer.com/api/v1/
     humanURL: https://learn.microsoft.com/en-us/rest/api/yammer/rest-api-rate-limits
     properties:
