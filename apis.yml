@@ -33,6 +33,10 @@ apis:
       search content, and integrate Yammer's social collaboration features
       into custom applications.
 common:
+  - type: DomainSecurity
+    url: security/microsoft-yammer-domain-security.yml
+  - type: Authentication
+    url: authentication/microsoft-yammer-authentication.yml
   - type: OAuthScopes
     url: scopes/microsoft-yammer-scopes.yml
   - type: GitHubOrganization

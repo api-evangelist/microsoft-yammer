@@ -1,0 +1,19 @@
+generated: '2026-07-11'
+method: derived
+source: openapi/microsoft-yammer-openapi.yml
+summary:
+  types:
+  - oauth2
+  oauth2_flows:
+  - authorizationCode
+schemes:
+- name: OAuth2
+  type: oauth2
+  flows:
+  - flow: authorizationCode
+    authorizationUrl: https://www.yammer.com/dialog/oauth
+    tokenUrl: https://www.yammer.com/oauth2/access_token.json
+    scopes: 0
+  description: Yammer OAuth 2.0 legacy tokens or Microsoft Entra tokens. Delegated access only.
+  sources:
+  - openapi/microsoft-yammer-openapi.yml
