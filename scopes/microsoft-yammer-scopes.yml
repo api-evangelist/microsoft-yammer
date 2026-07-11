@@ -1,0 +1,32 @@
+generated: '2026-07-11'
+method: searched
+source: openapi/microsoft-yammer-openapi.yml
+docs: https://learn.microsoft.com/en-us/rest/api/yammer/app-registration
+note: Legacy Yammer OAuth 2.0 tokens carry no granular scopes (a token grants full
+  access as the authorizing user), and legacy app registrations are restricted as
+  of July 1, 2025. Microsoft now directs developers to Entra applications, where
+  the Yammer API exposes delegated permissions only — no application permissions
+  are supported (https://learn.microsoft.com/en-us/rest/api/yammer/app-registration).
+schemes:
+- name: OAuth2
+  source: openapi/microsoft-yammer-openapi.yml
+  flows:
+  - flow: authorizationCode
+    authorizationUrl: https://www.yammer.com/dialog/oauth
+    tokenUrl: https://www.yammer.com/oauth2/access_token.json
+  description: Yammer OAuth 2.0 legacy tokens or Microsoft Entra tokens. Delegated access only.
+scopes:
+- scope: access_as_user
+  description: Delegated Entra permission for the Yammer API; allows the application
+    to read and write to the Viva Engage (Yammer) platform on behalf of the signed-in
+    user. The permission Microsoft's app-registration guide says to select for Entra
+    applications calling the legacy Yammer REST APIs.
+  sources:
+  - https://learn.microsoft.com/en-us/rest/api/yammer/app-registration
+- scope: user_impersonation
+  description: Delegated Entra permission for the Yammer API used with AAD/Entra
+    tokens; allows the application to access the Yammer platform as the signed-in
+    user (used by the Yammer-API-with-AAD-tokens flow, requested as
+    https://api.yammer.com/user_impersonation).
+  sources:
+  - https://techcommunity.microsoft.com/blog/viva_engage_blog/yammer-api-with-aad-tokens-postman-collection/857923
