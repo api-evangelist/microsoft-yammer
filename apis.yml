@@ -33,6 +33,8 @@ apis:
       search content, and integrate Yammer's social collaboration features
       into custom applications.
 common:
+  - type: AgenticAccess
+    url: agentic-access/microsoft-yammer-agentic-access.yml
   - type: DomainSecurity
     url: security/microsoft-yammer-domain-security.yml
   - type: Authentication
