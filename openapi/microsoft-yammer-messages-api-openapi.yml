@@ -1,0 +1,215 @@
+openapi: 3.1.0
+info:
+  title: Viva Engage (Yammer) Legacy REST Files Messages API
+  description: 'Legacy Viva Engage (Yammer) REST API for messages, threads, topics, groups, users,
+
+    subscriptions, and search. Sourced from
+
+    https://learn.microsoft.com/en-us/rest/api/yammer/. Only v1 endpoints are supported.
+
+    Authentication uses Yammer OAuth 2.0 legacy tokens or Microsoft Entra tokens
+
+    (delegated access only).
+
+    '
+  version: '1.0'
+  contact:
+    name: Viva Engage (Yammer) API
+    url: https://learn.microsoft.com/en-us/rest/api/yammer/
+servers:
+- url: https://www.yammer.com/api/v1
+  description: Yammer Core REST API v1
+security:
+- OAuth2: []
+tags:
+- name: Messages
+paths:
+  /messages/my_feed.json:
+    get:
+      summary: Get current user's feed messages
+      operationId: getMyFeed
+      tags:
+      - Messages
+      responses:
+        '200':
+          description: Messages
+  /messages/algo.json:
+    get:
+      summary: Get algorithmically sorted messages
+      operationId: getAlgoMessages
+      tags:
+      - Messages
+      responses:
+        '200':
+          description: Messages
+  /messages/following.json:
+    get:
+      summary: Get messages from followed users
+      operationId: getFollowingMessages
+      tags:
+      - Messages
+      responses:
+        '200':
+          description: Messages
+  /messages.json:
+    get:
+      summary: Get messages from user's network feed
+      operationId: listMessages
+      tags:
+      - Messages
+      responses:
+        '200':
+          description: Messages
+    post:
+      summary: Post a new message
+      operationId: postMessage
+      tags:
+      - Messages
+      requestBody:
+        required: true
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              type: object
+              properties:
+                body:
+                  type: string
+                group_id:
+                  type: integer
+                replied_to_id:
+                  type: integer
+                direct_to_id:
+                  type: integer
+                topic1:
+                  type: string
+      responses:
+        '201':
+          description: Created
+  /messages/sent.json:
+    get:
+      summary: Get messages sent by the current user
+      operationId: getSentMessages
+      tags:
+      - Messages
+      responses:
+        '200':
+          description: Messages
+  /messages/private.json:
+    get:
+      summary: Get private messages received by current user
+      operationId: getPrivateMessages
+      tags:
+      - Messages
+      responses:
+        '200':
+          description: Messages
+  /messages/received.json:
+    get:
+      summary: Get messages received by current user
+      operationId: getReceivedMessages
+      tags:
+      - Messages
+      responses:
+        '200':
+          description: Messages
+  /messages/in_thread/{thread_id}.json:
+    get:
+      summary: Get messages in a thread
+      operationId: getMessagesInThread
+      tags:
+      - Messages
+      parameters:
+      - name: thread_id
+        in: path
+        required: true
+        schema:
+          type: integer
+      responses:
+        '200':
+          description: Messages
+  /messages/in_group/{group_id}.json:
+    get:
+      summary: Get messages in a group
+      operationId: getMessagesInGroup
+      tags:
+      - Messages
+      parameters:
+      - name: group_id
+        in: path
+        required: true
+        schema:
+          type: integer
+      responses:
+        '200':
+          description: Messages
+  /messages/about_topic/{id}.json:
+    get:
+      summary: Get messages about a topic
+      operationId: getMessagesAboutTopic
+      tags:
+      - Messages
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: integer
+      responses:
+        '200':
+          description: Messages
+  /messages/liked_by/current.json:
+    post:
+      summary: Like a message
+      operationId: likeMessage
+      tags:
+      - Messages
+      parameters:
+      - name: message_id
+        in: query
+        required: true
+        schema:
+          type: integer
+      responses:
+        '201':
+          description: Liked
+    delete:
+      summary: Unlike a message
+      operationId: unlikeMessage
+      tags:
+      - Messages
+      parameters:
+      - name: message_id
+        in: query
+        required: true
+        schema:
+          type: integer
+      responses:
+        '204':
+          description: Unliked
+  /messages/{id}.json:
+    delete:
+      summary: Delete a message
+      operationId: deleteMessage
+      tags:
+      - Messages
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: integer
+      responses:
+        '204':
+          description: Deleted
+components:
+  securitySchemes:
+    OAuth2:
+      type: oauth2
+      description: 'Yammer OAuth 2.0 legacy tokens or Microsoft Entra tokens. Delegated access only.
+
+        '
+      flows:
+        authorizationCode:
+          authorizationUrl: https://www.yammer.com/dialog/oauth
+          tokenUrl: https://www.yammer.com/oauth2/access_token.json
+          scopes: {}

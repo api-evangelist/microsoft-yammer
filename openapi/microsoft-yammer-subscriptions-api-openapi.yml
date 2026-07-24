@@ -1,0 +1,70 @@
+openapi: 3.1.0
+info:
+  title: Viva Engage (Yammer) Legacy REST Files Subscriptions API
+  description: 'Legacy Viva Engage (Yammer) REST API for messages, threads, topics, groups, users,
+
+    subscriptions, and search. Sourced from
+
+    https://learn.microsoft.com/en-us/rest/api/yammer/. Only v1 endpoints are supported.
+
+    Authentication uses Yammer OAuth 2.0 legacy tokens or Microsoft Entra tokens
+
+    (delegated access only).
+
+    '
+  version: '1.0'
+  contact:
+    name: Viva Engage (Yammer) API
+    url: https://learn.microsoft.com/en-us/rest/api/yammer/
+servers:
+- url: https://www.yammer.com/api/v1
+  description: Yammer Core REST API v1
+security:
+- OAuth2: []
+tags:
+- name: Subscriptions
+paths:
+  /subscriptions/to_topic/{id}.json:
+    get:
+      summary: Get subscriptions to a topic
+      operationId: getTopicSubscriptions
+      tags:
+      - Subscriptions
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: integer
+      responses:
+        '200':
+          description: Subscriptions
+  /subscriptions:
+    post:
+      summary: Subscribe to a topic or user
+      operationId: createSubscription
+      tags:
+      - Subscriptions
+      responses:
+        '201':
+          description: Subscribed
+    delete:
+      summary: Unsubscribe from a topic or user
+      operationId: deleteSubscription
+      tags:
+      - Subscriptions
+      responses:
+        '204':
+          description: Unsubscribed
+components:
+  securitySchemes:
+    OAuth2:
+      type: oauth2
+      description: 'Yammer OAuth 2.0 legacy tokens or Microsoft Entra tokens. Delegated access only.
+
+        '
+      flows:
+        authorizationCode:
+          authorizationUrl: https://www.yammer.com/dialog/oauth
+          tokenUrl: https://www.yammer.com/oauth2/access_token.json
+          scopes: {}

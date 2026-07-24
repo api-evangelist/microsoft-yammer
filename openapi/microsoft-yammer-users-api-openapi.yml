@@ -1,0 +1,155 @@
+openapi: 3.1.0
+info:
+  title: Viva Engage (Yammer) Legacy REST Files Users API
+  description: 'Legacy Viva Engage (Yammer) REST API for messages, threads, topics, groups, users,
+
+    subscriptions, and search. Sourced from
+
+    https://learn.microsoft.com/en-us/rest/api/yammer/. Only v1 endpoints are supported.
+
+    Authentication uses Yammer OAuth 2.0 legacy tokens or Microsoft Entra tokens
+
+    (delegated access only).
+
+    '
+  version: '1.0'
+  contact:
+    name: Viva Engage (Yammer) API
+    url: https://learn.microsoft.com/en-us/rest/api/yammer/
+servers:
+- url: https://www.yammer.com/api/v1
+  description: Yammer Core REST API v1
+security:
+- OAuth2: []
+tags:
+- name: Users
+paths:
+  /users.json:
+    get:
+      summary: List users
+      operationId: listUsers
+      tags:
+      - Users
+      responses:
+        '200':
+          description: Users
+    post:
+      summary: Create a new user
+      operationId: createUser
+      tags:
+      - Users
+      requestBody:
+        required: true
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              type: object
+              properties:
+                email:
+                  type: string
+                full_name:
+                  type: string
+      responses:
+        '201':
+          description: Created
+  /users/current.json:
+    get:
+      summary: Get current user profile
+      operationId: getCurrentUser
+      tags:
+      - Users
+      responses:
+        '200':
+          description: User
+  /users/{id}.json:
+    get:
+      summary: Get a user profile by id
+      operationId: getUser
+      tags:
+      - Users
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: integer
+      responses:
+        '200':
+          description: User
+    put:
+      summary: Update a user's profile
+      operationId: updateUser
+      tags:
+      - Users
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: integer
+      requestBody:
+        required: true
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              type: object
+      responses:
+        '200':
+          description: Updated
+    delete:
+      summary: Delete a user
+      operationId: deleteUser
+      tags:
+      - Users
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: integer
+      responses:
+        '204':
+          description: Deleted
+  /users/by_email.json:
+    get:
+      summary: Get user profile by email
+      operationId: getUserByEmail
+      tags:
+      - Users
+      parameters:
+      - name: email
+        in: query
+        required: true
+        schema:
+          type: string
+          format: email
+      responses:
+        '200':
+          description: User
+  /users/in_group/{id}.json:
+    get:
+      summary: Get users in a group
+      operationId: getUsersInGroup
+      tags:
+      - Users
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: integer
+      responses:
+        '200':
+          description: Users
+components:
+  securitySchemes:
+    OAuth2:
+      type: oauth2
+      description: 'Yammer OAuth 2.0 legacy tokens or Microsoft Entra tokens. Delegated access only.
+
+        '
+      flows:
+        authorizationCode:
+          authorizationUrl: https://www.yammer.com/dialog/oauth
+          tokenUrl: https://www.yammer.com/oauth2/access_token.json
+          scopes: {}

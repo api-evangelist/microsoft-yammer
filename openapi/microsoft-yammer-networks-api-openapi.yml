@@ -1,0 +1,47 @@
+openapi: 3.1.0
+info:
+  title: Viva Engage (Yammer) Legacy REST Files Networks API
+  description: 'Legacy Viva Engage (Yammer) REST API for messages, threads, topics, groups, users,
+
+    subscriptions, and search. Sourced from
+
+    https://learn.microsoft.com/en-us/rest/api/yammer/. Only v1 endpoints are supported.
+
+    Authentication uses Yammer OAuth 2.0 legacy tokens or Microsoft Entra tokens
+
+    (delegated access only).
+
+    '
+  version: '1.0'
+  contact:
+    name: Viva Engage (Yammer) API
+    url: https://learn.microsoft.com/en-us/rest/api/yammer/
+servers:
+- url: https://www.yammer.com/api/v1
+  description: Yammer Core REST API v1
+security:
+- OAuth2: []
+tags:
+- name: Networks
+paths:
+  /networks/current.json:
+    get:
+      summary: Get current network details
+      operationId: getCurrentNetwork
+      tags:
+      - Networks
+      responses:
+        '200':
+          description: Network
+components:
+  securitySchemes:
+    OAuth2:
+      type: oauth2
+      description: 'Yammer OAuth 2.0 legacy tokens or Microsoft Entra tokens. Delegated access only.
+
+        '
+      flows:
+        authorizationCode:
+          authorizationUrl: https://www.yammer.com/dialog/oauth
+          tokenUrl: https://www.yammer.com/oauth2/access_token.json
+          scopes: {}
