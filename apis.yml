@@ -2,7 +2,20 @@ aid: microsoft-yammer
 name: Microsoft Yammer
 description: APIs for Yammer (now Viva Engage) enterprise social networking platform providing access to messages, groups, users, and networks.
 type: Index
-image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+accessModel:
+  pricing: freemium
+  onboarding: self-serve
+  trial: false
+  try_now: true
+  public: false
+  label: Freemium · Self-serve signup
+  confidence: high
+  source:
+  - plans
+  - authentication
+  generated: '2026-07-22'
+  method: derived
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/microsoft-yammer.png
 tags:
   - Enterprise Social
   - Microsoft
@@ -14,24 +27,112 @@ modified: '2026-04-28'
 specificationVersion: '0.19'
 url: https://raw.githubusercontent.com/api-evangelist/microsoft-yammer/refs/heads/main/apis.yml
 apis:
-  - aid: microsoft-yammer:rest-api
-    name: Yammer REST API
-    tags:
-      - Enterprise Social
-      - Social Networking
-      - Viva Engage
-    image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
-    baseURL: https://www.yammer.com/api/v1/
-    humanURL: https://learn.microsoft.com/en-us/rest/api/yammer/rest-api-rate-limits
-    properties:
-      - url: https://learn.microsoft.com/en-us/rest/api/yammer/rest-api-rate-limits
-        type: Documentation
-    description: >-
-      The Yammer REST API (now Viva Engage) provides access to enterprise
-      social networking features including messages, groups, users, and
-      networks. Developers can post messages, manage group memberships,
-      search content, and integrate Yammer's social collaboration features
-      into custom applications.
+- aid: microsoft-yammer:rest-api
+  name: Yammer REST API
+  tags:
+  - Enterprise Social
+  - Social Networking
+  - Viva Engage
+  image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+  baseURL: https://www.yammer.com/api/v1/
+  humanURL: https://learn.microsoft.com/en-us/rest/api/yammer/rest-api-rate-limits
+  properties:
+  - url: https://learn.microsoft.com/en-us/rest/api/yammer/rest-api-rate-limits
+    type: Documentation
+  description: >-
+    The Yammer REST API (now Viva Engage) provides access to enterprise social networking features including
+    messages, groups, users, and networks. Developers can post messages, manage group memberships, search
+    content, and integrate Yammer's social collaboration features into custom applications.
+- aid: microsoft-yammer:microsoft-yammer-files-api
+  name: Microsoft Yammer Files API
+  description: The Files API from Microsoft Yammer — 1 operation(s) for files.
+  humanURL: https://learn.microsoft.com/en-us/rest/api/yammer/rest-api-rate-limits
+  baseURL: https://www.yammer.com/api/v1/
+  tags:
+  - Files
+  properties:
+  - type: OpenAPI
+    url: openapi/microsoft-yammer-files-api-openapi.yml
+- aid: microsoft-yammer:microsoft-yammer-groups-api
+  name: Microsoft Yammer Groups API
+  description: The Groups API from Microsoft Yammer — 2 operation(s) for groups.
+  humanURL: https://learn.microsoft.com/en-us/rest/api/yammer/rest-api-rate-limits
+  baseURL: https://www.yammer.com/api/v1/
+  tags:
+  - Groups
+  properties:
+  - type: OpenAPI
+    url: openapi/microsoft-yammer-groups-api-openapi.yml
+- aid: microsoft-yammer:microsoft-yammer-messages-api
+  name: Microsoft Yammer Messages API
+  description: The Messages API from Microsoft Yammer — 12 operation(s) for messages.
+  humanURL: https://learn.microsoft.com/en-us/rest/api/yammer/rest-api-rate-limits
+  baseURL: https://www.yammer.com/api/v1/
+  tags:
+  - Messages
+  properties:
+  - type: OpenAPI
+    url: openapi/microsoft-yammer-messages-api-openapi.yml
+- aid: microsoft-yammer:microsoft-yammer-networks-api
+  name: Microsoft Yammer Networks API
+  description: The Networks API from Microsoft Yammer — 1 operation(s) for networks.
+  humanURL: https://learn.microsoft.com/en-us/rest/api/yammer/rest-api-rate-limits
+  baseURL: https://www.yammer.com/api/v1/
+  tags:
+  - Networks
+  properties:
+  - type: OpenAPI
+    url: openapi/microsoft-yammer-networks-api-openapi.yml
+- aid: microsoft-yammer:microsoft-yammer-search-api
+  name: Microsoft Yammer Search API
+  description: The Search API from Microsoft Yammer — 1 operation(s) for search.
+  humanURL: https://learn.microsoft.com/en-us/rest/api/yammer/rest-api-rate-limits
+  baseURL: https://www.yammer.com/api/v1/
+  tags:
+  - Search
+  properties:
+  - type: OpenAPI
+    url: openapi/microsoft-yammer-search-api-openapi.yml
+- aid: microsoft-yammer:microsoft-yammer-subscriptions-api
+  name: Microsoft Yammer Subscriptions API
+  description: The Subscriptions API from Microsoft Yammer — 2 operation(s) for subscriptions.
+  humanURL: https://learn.microsoft.com/en-us/rest/api/yammer/rest-api-rate-limits
+  baseURL: https://www.yammer.com/api/v1/
+  tags:
+  - Subscriptions
+  properties:
+  - type: OpenAPI
+    url: openapi/microsoft-yammer-subscriptions-api-openapi.yml
+- aid: microsoft-yammer:microsoft-yammer-threads-api
+  name: Microsoft Yammer Threads API
+  description: The Threads API from Microsoft Yammer — 1 operation(s) for threads.
+  humanURL: https://learn.microsoft.com/en-us/rest/api/yammer/rest-api-rate-limits
+  baseURL: https://www.yammer.com/api/v1/
+  tags:
+  - Threads
+  properties:
+  - type: OpenAPI
+    url: openapi/microsoft-yammer-threads-api-openapi.yml
+- aid: microsoft-yammer:microsoft-yammer-topics-api
+  name: Microsoft Yammer Topics API
+  description: The Topics API from Microsoft Yammer — 1 operation(s) for topics.
+  humanURL: https://learn.microsoft.com/en-us/rest/api/yammer/rest-api-rate-limits
+  baseURL: https://www.yammer.com/api/v1/
+  tags:
+  - Topics
+  properties:
+  - type: OpenAPI
+    url: openapi/microsoft-yammer-topics-api-openapi.yml
+- aid: microsoft-yammer:microsoft-yammer-users-api
+  name: Microsoft Yammer Users API
+  description: The Users API from Microsoft Yammer — 5 operation(s) for users.
+  humanURL: https://learn.microsoft.com/en-us/rest/api/yammer/rest-api-rate-limits
+  baseURL: https://www.yammer.com/api/v1/
+  tags:
+  - Users
+  properties:
+  - type: OpenAPI
+    url: openapi/microsoft-yammer-users-api-openapi.yml
 common:
   - type: AgenticAccess
     url: agentic-access/microsoft-yammer-agentic-access.yml
