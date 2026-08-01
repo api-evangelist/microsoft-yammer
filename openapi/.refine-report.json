@@ -1,0 +1,30 @@
+{
+  "provider": "microsoft-yammer",
+  "sources": [
+    "microsoft-yammer-files-api-openapi.yml",
+    "microsoft-yammer-groups-api-openapi.yml",
+    "microsoft-yammer-messages-api-openapi.yml",
+    "microsoft-yammer-networks-api-openapi.yml",
+    "microsoft-yammer-search-api-openapi.yml",
+    "microsoft-yammer-subscriptions-api-openapi.yml",
+    "microsoft-yammer-threads-api-openapi.yml",
+    "microsoft-yammer-topics-api-openapi.yml",
+    "microsoft-yammer-users-api-openapi.yml"
+  ],
+  "outputs": [
+    "microsoft-yammer-files-api-openapi.yml",
+    "microsoft-yammer-groups-api-openapi.yml",
+    "microsoft-yammer-messages-api-openapi.yml",
+    "microsoft-yammer-networks-api-openapi.yml",
+    "microsoft-yammer-search-api-openapi.yml",
+    "microsoft-yammer-subscriptions-api-openapi.yml",
+    "microsoft-yammer-threads-api-openapi.yml",
+    "microsoft-yammer-topics-api-openapi.yml",
+    "microsoft-yammer-users-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [],
+  "notes": [],
+  "skipped": []
+}
