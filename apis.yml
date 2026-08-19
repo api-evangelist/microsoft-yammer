@@ -24,7 +24,7 @@ tags:
   - Yammer
 created: '2024-01-01'
 modified: '2026-04-28'
-specificationVersion: '0.19'
+specificationVersion: '0.23'
 url: https://raw.githubusercontent.com/api-evangelist/microsoft-yammer/refs/heads/main/apis.yml
 apis:
 - aid: microsoft-yammer:rest-api
