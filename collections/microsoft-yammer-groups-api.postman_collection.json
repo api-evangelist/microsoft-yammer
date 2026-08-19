@@ -1,0 +1,282 @@
+{
+  "item": [
+    {
+      "id": "6d49b925-b1c4-48db-bda0-451ba2b596b5",
+      "name": "Groups",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "af2b6561-ec6f-4707-afe6-6fef086e9273",
+          "name": "Add a user to a group",
+          "request": {
+            "name": "Add a user to a group",
+            "description": {},
+            "url": {
+              "path": [
+                "group_memberships.json"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "group_id",
+                  "value": "<integer>",
+                  "description": "(Required) "
+                }
+              ],
+              "variable": []
+            },
+            "method": "POST",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "adbf6c9d-f267-4df8-a76e-1e03e578eb35",
+              "name": "Added",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "group_memberships.json"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "group_id",
+                      "value": "<integer>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "Created",
+              "code": 201,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "b0de0e16-6f27-4634-bedb-eaa574e350c4",
+          "name": "Remove a user from a group",
+          "request": {
+            "name": "Remove a user from a group",
+            "description": {},
+            "url": {
+              "path": [
+                "group_memberships.json"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "group_id",
+                  "value": "<integer>",
+                  "description": "(Required) "
+                }
+              ],
+              "variable": []
+            },
+            "method": "DELETE",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "c67f1083-a577-45be-9607-0f081273fa96",
+              "name": "Removed",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "group_memberships.json"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "group_id",
+                      "value": "<integer>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "ee37b1c7-c8b0-46da-8b07-8aa81d235f40",
+          "name": "Get groups for a user",
+          "request": {
+            "name": "Get groups for a user",
+            "description": {},
+            "url": {
+              "path": [
+                "groups",
+                "for_user",
+                "{{user_id}}.json"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "4cc59056-aae3-4c36-a376-244c911c5fe1",
+              "name": "Groups",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "groups",
+                    "for_user",
+                    "{{user_id}}.json"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://www.yammer.com/api/v1",
+      "key": "baseUrl"
+    },
+    {
+      "disabled": false,
+      "description": {
+        "content": "(Required) ",
+        "type": "text/plain"
+      },
+      "type": "any",
+      "value": "<integer>",
+      "key": "user_id"
+    }
+  ],
+  "auth": {
+    "type": "oauth2",
+    "oauth2": [
+      {
+        "key": "accessTokenUrl",
+        "value": "https://www.yammer.com/oauth2/access_token.json"
+      },
+      {
+        "key": "authUrl",
+        "value": "https://www.yammer.com/dialog/oauth"
+      },
+      {
+        "key": "grant_type",
+        "value": "authorization_code"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "a32a862a-4e3c-4633-846b-6d69fe7b4b57",
+    "name": "Viva Engage (Yammer) Legacy REST Files Groups API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Legacy Viva Engage (Yammer) REST API for messages, threads, topics, groups, users,\nsubscriptions, and search. Sourced from\nhttps://learn.microsoft.com/en-us/rest/api/yammer/. Only v1 endpoints are supported.\nAuthentication uses Yammer OAuth 2.0 legacy tokens or Microsoft Entra tokens\n(delegated access only).\n\n\nContact Support:\n Name: Viva Engage (Yammer) API",
+      "type": "text/plain"
+    }
+  }
+}

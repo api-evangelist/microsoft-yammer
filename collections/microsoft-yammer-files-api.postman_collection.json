@@ -1,0 +1,126 @@
+{
+  "item": [
+    {
+      "id": "498330d4-82c7-44da-a3db-b226598972ed",
+      "name": "Files",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "efaee49c-ec8e-4293-8261-46091401e50f",
+          "name": "Delete an uploaded file",
+          "request": {
+            "name": "Delete an uploaded file",
+            "description": {},
+            "url": {
+              "path": [
+                "uploaded_files",
+                "{{id}}.json"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "DELETE",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "d7d9fb20-91b0-41bb-8af0-582b789e0c1c",
+              "name": "Deleted",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "uploaded_files",
+                    "{{id}}.json"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://www.yammer.com/api/v1",
+      "key": "baseUrl"
+    },
+    {
+      "disabled": false,
+      "description": {
+        "content": "(Required) ",
+        "type": "text/plain"
+      },
+      "type": "any",
+      "value": "<integer>",
+      "key": "id"
+    }
+  ],
+  "auth": {
+    "type": "oauth2",
+    "oauth2": [
+      {
+        "key": "accessTokenUrl",
+        "value": "https://www.yammer.com/oauth2/access_token.json"
+      },
+      {
+        "key": "authUrl",
+        "value": "https://www.yammer.com/dialog/oauth"
+      },
+      {
+        "key": "grant_type",
+        "value": "authorization_code"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "ed1ac6c7-7c88-4f8f-81ad-98848d43e408",
+    "name": "Viva Engage (Yammer) Legacy REST Files API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Legacy Viva Engage (Yammer) REST API for messages, threads, topics, groups, users,\nsubscriptions, and search. Sourced from\nhttps://learn.microsoft.com/en-us/rest/api/yammer/. Only v1 endpoints are supported.\nAuthentication uses Yammer OAuth 2.0 legacy tokens or Microsoft Entra tokens\n(delegated access only).\n\n\nContact Support:\n Name: Viva Engage (Yammer) API",
+      "type": "text/plain"
+    }
+  }
+}

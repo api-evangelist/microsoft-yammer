@@ -1,0 +1,126 @@
+{
+  "item": [
+    {
+      "id": "f26c9a09-16e7-4489-b31e-464a1a7e076b",
+      "name": "Topics",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "c2a58202-76aa-4f65-8a62-8eea19e39d06",
+          "name": "Get topic details",
+          "request": {
+            "name": "Get topic details",
+            "description": {},
+            "url": {
+              "path": [
+                "topics",
+                "{{id}}.json"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "b19376b9-579a-455d-ae53-aae1d13a8022",
+              "name": "Topic",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "topics",
+                    "{{id}}.json"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://www.yammer.com/api/v1",
+      "key": "baseUrl"
+    },
+    {
+      "disabled": false,
+      "description": {
+        "content": "(Required) ",
+        "type": "text/plain"
+      },
+      "type": "any",
+      "value": "<integer>",
+      "key": "id"
+    }
+  ],
+  "auth": {
+    "type": "oauth2",
+    "oauth2": [
+      {
+        "key": "accessTokenUrl",
+        "value": "https://www.yammer.com/oauth2/access_token.json"
+      },
+      {
+        "key": "authUrl",
+        "value": "https://www.yammer.com/dialog/oauth"
+      },
+      {
+        "key": "grant_type",
+        "value": "authorization_code"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "a1147944-b9f2-4faa-8b2f-13240eb34426",
+    "name": "Viva Engage (Yammer) Legacy REST Files Topics API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Legacy Viva Engage (Yammer) REST API for messages, threads, topics, groups, users,\nsubscriptions, and search. Sourced from\nhttps://learn.microsoft.com/en-us/rest/api/yammer/. Only v1 endpoints are supported.\nAuthentication uses Yammer OAuth 2.0 legacy tokens or Microsoft Entra tokens\n(delegated access only).\n\n\nContact Support:\n Name: Viva Engage (Yammer) API",
+      "type": "text/plain"
+    }
+  }
+}

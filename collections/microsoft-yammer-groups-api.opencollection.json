@@ -1,0 +1,84 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Viva Engage (Yammer) Legacy REST Files Groups API",
+    "version": "1.0"
+  },
+  "request": {
+    "auth": {
+      "type": "oauth2",
+      "flow": "authorization_code",
+      "authorizationUrl": "https://www.yammer.com/dialog/oauth",
+      "accessTokenUrl": "https://www.yammer.com/oauth2/access_token.json",
+      "credentials": {
+        "clientId": "{{clientId}}",
+        "clientSecret": "{{clientSecret}}"
+      }
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Groups",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Add a user to a group",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://www.yammer.com/api/v1/group_memberships.json",
+            "params": [
+              {
+                "name": "group_id",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Add a user to a group"
+        },
+        {
+          "info": {
+            "name": "Remove a user from a group",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://www.yammer.com/api/v1/group_memberships.json",
+            "params": [
+              {
+                "name": "group_id",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Remove a user from a group"
+        },
+        {
+          "info": {
+            "name": "Get groups for a user",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://www.yammer.com/api/v1/groups/for_user/:user_id.json",
+            "params": [
+              {
+                "name": "user_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Get groups for a user"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

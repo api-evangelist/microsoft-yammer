@@ -1,0 +1,70 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Viva Engage (Yammer) Legacy REST Files Subscriptions API",
+    "version": "1.0"
+  },
+  "request": {
+    "auth": {
+      "type": "oauth2",
+      "flow": "authorization_code",
+      "authorizationUrl": "https://www.yammer.com/dialog/oauth",
+      "accessTokenUrl": "https://www.yammer.com/oauth2/access_token.json",
+      "credentials": {
+        "clientId": "{{clientId}}",
+        "clientSecret": "{{clientSecret}}"
+      }
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Subscriptions",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get subscriptions to a topic",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://www.yammer.com/api/v1/subscriptions/to_topic/:id.json",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Get subscriptions to a topic"
+        },
+        {
+          "info": {
+            "name": "Subscribe to a topic or user",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://www.yammer.com/api/v1/subscriptions"
+          },
+          "docs": "Subscribe to a topic or user"
+        },
+        {
+          "info": {
+            "name": "Unsubscribe from a topic or user",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://www.yammer.com/api/v1/subscriptions"
+          },
+          "docs": "Unsubscribe from a topic or user"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

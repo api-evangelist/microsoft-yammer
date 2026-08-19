@@ -1,0 +1,170 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Viva Engage (Yammer) Legacy REST Files Users API",
+    "version": "1.0"
+  },
+  "request": {
+    "auth": {
+      "type": "oauth2",
+      "flow": "authorization_code",
+      "authorizationUrl": "https://www.yammer.com/dialog/oauth",
+      "accessTokenUrl": "https://www.yammer.com/oauth2/access_token.json",
+      "credentials": {
+        "clientId": "{{clientId}}",
+        "clientSecret": "{{clientSecret}}"
+      }
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Users",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List users",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://www.yammer.com/api/v1/users.json"
+          },
+          "docs": "List users"
+        },
+        {
+          "info": {
+            "name": "Create a new user",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://www.yammer.com/api/v1/users.json",
+            "body": {
+              "type": "form-urlencoded",
+              "data": [
+                {
+                  "name": "email",
+                  "value": ""
+                },
+                {
+                  "name": "full_name",
+                  "value": ""
+                }
+              ]
+            }
+          },
+          "docs": "Create a new user"
+        },
+        {
+          "info": {
+            "name": "Get current user profile",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://www.yammer.com/api/v1/users/current.json"
+          },
+          "docs": "Get current user profile"
+        },
+        {
+          "info": {
+            "name": "Get a user profile by id",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://www.yammer.com/api/v1/users/:id.json",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Get a user profile by id"
+        },
+        {
+          "info": {
+            "name": "Update a user's profile",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://www.yammer.com/api/v1/users/:id.json",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "form-urlencoded",
+              "data": []
+            }
+          },
+          "docs": "Update a user's profile"
+        },
+        {
+          "info": {
+            "name": "Delete a user",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://www.yammer.com/api/v1/users/:id.json",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Delete a user"
+        },
+        {
+          "info": {
+            "name": "Get user profile by email",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://www.yammer.com/api/v1/users/by_email.json",
+            "params": [
+              {
+                "name": "email",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Get user profile by email"
+        },
+        {
+          "info": {
+            "name": "Get users in a group",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://www.yammer.com/api/v1/users/in_group/:id.json",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Get users in a group"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}
