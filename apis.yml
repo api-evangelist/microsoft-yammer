@@ -49,6 +49,8 @@ apis:
   humanURL: https://learn.microsoft.com/en-us/rest/api/yammer/rest-api-rate-limits
   baseURL: https://www.yammer.com/api/v1/
   tags:
+  - File
+  tags_raw:
   - Files
   properties:
   - type: OpenAPI
@@ -59,6 +61,8 @@ apis:
   humanURL: https://learn.microsoft.com/en-us/rest/api/yammer/rest-api-rate-limits
   baseURL: https://www.yammer.com/api/v1/
   tags:
+  - Group
+  tags_raw:
   - Groups
   properties:
   - type: OpenAPI
@@ -69,6 +73,8 @@ apis:
   humanURL: https://learn.microsoft.com/en-us/rest/api/yammer/rest-api-rate-limits
   baseURL: https://www.yammer.com/api/v1/
   tags:
+  - Message
+  tags_raw:
   - Messages
   properties:
   - type: OpenAPI
@@ -99,6 +105,8 @@ apis:
   humanURL: https://learn.microsoft.com/en-us/rest/api/yammer/rest-api-rate-limits
   baseURL: https://www.yammer.com/api/v1/
   tags:
+  - Subscription
+  tags_raw:
   - Subscriptions
   properties:
   - type: OpenAPI
@@ -129,6 +137,8 @@ apis:
   humanURL: https://learn.microsoft.com/en-us/rest/api/yammer/rest-api-rate-limits
   baseURL: https://www.yammer.com/api/v1/
   tags:
+  - User
+  tags_raw:
   - Users
   properties:
   - type: OpenAPI
