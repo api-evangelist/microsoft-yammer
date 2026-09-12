@@ -156,6 +156,8 @@ apis:
   - type: OpenAPI
     url: openapi/microsoft-yammer-users-api-openapi.yml
 common:
+  - type: Website
+    url: https://www.microsoft.com/
   - type: AgenticAccess
     url: agentic-access/microsoft-yammer-agentic-access.yml
   - type: DomainSecurity
@@ -181,3 +183,5 @@ common:
 maintainers:
   - FN: Kin Lane
     email: kin@apievangelist.com
+x-parent: microsoft
+x-relationship: product

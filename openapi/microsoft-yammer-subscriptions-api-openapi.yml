@@ -1,4 +1,4 @@
-openapi: 3.1.0
+openapi: 3.2.0
 info:
   title: Viva Engage (Yammer) Legacy REST Files Subscriptions API
   description: 'Legacy Viva Engage (Yammer) REST API for messages, threads, topics, groups, users,
