@@ -139,6 +139,8 @@ apis:
   humanURL: https://learn.microsoft.com/en-us/rest/api/yammer/rest-api-rate-limits
   baseURL: https://www.yammer.com/api/v1/
   tags:
+  - Topic
+  tags_raw:
   - Topics
   properties:
   - type: OpenAPI
