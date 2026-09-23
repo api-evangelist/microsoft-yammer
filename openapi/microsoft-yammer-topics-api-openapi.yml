@@ -1,6 +1,6 @@
 openapi: 3.2.0
 info:
-  title: Viva Engage (Yammer) Legacy REST Files Topics API
+  title: Viva Engage (Yammer) Legacy REST Topics API
   description: 'Legacy Viva Engage (Yammer) REST API for messages, threads, topics, groups, users,
 
     subscriptions, and search. Sourced from
@@ -9,9 +9,7 @@ info:
 
     Authentication uses Yammer OAuth 2.0 legacy tokens or Microsoft Entra tokens
 
-    (delegated access only).
-
-    '
+    (delegated access only).'
   version: '1.0'
   contact:
     name: Viva Engage (Yammer) API

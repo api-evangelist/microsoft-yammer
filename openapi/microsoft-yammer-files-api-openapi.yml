@@ -9,9 +9,7 @@ info:
 
     Authentication uses Yammer OAuth 2.0 legacy tokens or Microsoft Entra tokens
 
-    (delegated access only).
-
-    '
+    (delegated access only).'
   version: '1.0'
   contact:
     name: Viva Engage (Yammer) API
