@@ -31,6 +31,12 @@ image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/microsoft-
 tags:
   - Enterprise Social
   - Microsoft
+  - Social Network
+  - Viva Engage
+  - Yammer
+tags_raw:
+  - Enterprise Social
+  - Microsoft
   - Social Networking
   - Viva Engage
   - Yammer
@@ -42,6 +48,10 @@ apis:
 - aid: microsoft-yammer:rest-api
   name: Yammer REST API
   tags:
+  - Enterprise Social
+  - Social Network
+  - Viva Engage
+  tags_raw:
   - Enterprise Social
   - Social Networking
   - Viva Engage
