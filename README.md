@@ -1,4 +1,4 @@
-# Microsoft Yammer (microsoft-yammer)
+# Microsoft Yammer
 
 <!-- API-EVANGELIST-PROVENANCE:BEGIN -->
 > ### About this repository
@@ -66,57 +66,140 @@
 
 APIs for Yammer (now Viva Engage) enterprise social networking platform providing access to messages, groups, users, and networks.
 
-**APIs.json:** [https://raw.githubusercontent.com/api-evangelist/microsoft-yammer/refs/heads/main/apis.yml](https://raw.githubusercontent.com/api-evangelist/microsoft-yammer/refs/heads/main/apis.yml)
+**Areas:** Enterprise Social · Microsoft · Social Network · Viva Engage · Yammer
 
-## Scope
+## Microsoft Yammer on APIs.io
 
-- **Type:** Index
+Everything profiled for Microsoft Yammer is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/microsoft-yammer/](https://apis.io/providers/microsoft-yammer/)** — or go straight to one of the APIs or properties below.
 
-## Tags
+### APIs (10)
 
-- Enterprise Social
-- Microsoft
-- Social Networking
-- Viva Engage
-- Yammer
+- [Yammer REST API](https://apis.io/apis/microsoft-yammer/rest-api/) — The Yammer REST API (now Viva Engage) provides access to enterprise social networking features including messages, groups, users, and networks. Developers…
+- [Microsoft Yammer Files API](https://apis.io/apis/microsoft-yammer/microsoft-yammer-files-api/) — The Files API from Microsoft Yammer — 1 operation(s) for files.
+- [Microsoft Yammer Groups API](https://apis.io/apis/microsoft-yammer/microsoft-yammer-groups-api/) — The Groups API from Microsoft Yammer — 2 operation(s) for groups.
+- [Microsoft Yammer Messages API](https://apis.io/apis/microsoft-yammer/microsoft-yammer-messages-api/) — The Messages API from Microsoft Yammer — 12 operation(s) for messages.
+- [Microsoft Yammer Networks API](https://apis.io/apis/microsoft-yammer/microsoft-yammer-networks-api/) — The Networks API from Microsoft Yammer — 1 operation(s) for networks.
+- [Microsoft Yammer Search API](https://apis.io/apis/microsoft-yammer/microsoft-yammer-search-api/) — The Search API from Microsoft Yammer — 1 operation(s) for search.
+- [Microsoft Yammer Subscriptions API](https://apis.io/apis/microsoft-yammer/microsoft-yammer-subscriptions-api/) — The Subscriptions API from Microsoft Yammer — 2 operation(s) for subscriptions.
+- [Microsoft Yammer Threads API](https://apis.io/apis/microsoft-yammer/microsoft-yammer-threads-api/) — The Threads API from Microsoft Yammer — 1 operation(s) for threads.
+- [Microsoft Yammer Topics API](https://apis.io/apis/microsoft-yammer/microsoft-yammer-topics-api/) — The Topics API from Microsoft Yammer — 1 operation(s) for topics.
+- [Microsoft Yammer Users API](https://apis.io/apis/microsoft-yammer/microsoft-yammer-users-api/) — The Users API from Microsoft Yammer — 5 operation(s) for users.
 
-## Timestamps
+### Published properties
 
-- **Created:** 2024-01-01
-- **Modified:** 2026-04-28
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
 
-## APIs
+#### Agentic access (1)
 
-### Yammer REST API
+Which operations an agent can call, which act, and which need a human in the loop.
 
-The Yammer REST API (now Viva Engage) provides access to enterprise social networking features including messages, groups, users, and networks. Developers can post messages, manage group memberships, search content, and integrate Yammer's social collaboration features into custom applications.
+- [Microsoft Yammer Agentic Access](https://apis.io/agentic-access/microsoft-yammer/microsoft-yammer-agentic-access/)
 
-- **Human URL:** [https://learn.microsoft.com/en-us/rest/api/yammer/rest-api-rate-limits](https://learn.microsoft.com/en-us/rest/api/yammer/rest-api-rate-limits)
-- **Base URL:** `https://www.yammer.com/api/v1/`
+#### Collections (10)
 
-#### Tags
+Postman and Open Collection request collections.
 
-- Enterprise Social
-- Social Networking
-- Viva Engage
+- [Viva Engage (Yammer) Legacy REST API](https://apis.io/collections/microsoft-yammer/open-microsoft-yammer/)
+- [Viva Engage (Yammer) Legacy REST Files API](https://apis.io/collections/microsoft-yammer/open-microsoft-yammer-files-api/)
+- [Viva Engage (Yammer) Legacy REST Files Groups API](https://apis.io/collections/microsoft-yammer/open-microsoft-yammer-groups-api/)
+- [Viva Engage (Yammer) Legacy REST Files Messages API](https://apis.io/collections/microsoft-yammer/open-microsoft-yammer-messages-api/)
+- [Viva Engage (Yammer) Legacy REST Files Networks API](https://apis.io/collections/microsoft-yammer/open-microsoft-yammer-networks-api/)
+- [Viva Engage (Yammer) Legacy REST Files Search API](https://apis.io/collections/microsoft-yammer/open-microsoft-yammer-search-api/)
+- [Viva Engage (Yammer) Legacy REST Files Subscriptions API](https://apis.io/collections/microsoft-yammer/open-microsoft-yammer-subscriptions-api/)
+- [Viva Engage (Yammer) Legacy REST Files Threads API](https://apis.io/collections/microsoft-yammer/open-microsoft-yammer-threads-api/)
+- [Viva Engage (Yammer) Legacy REST Files Topics API](https://apis.io/collections/microsoft-yammer/open-microsoft-yammer-topics-api/)
+- [Viva Engage (Yammer) Legacy REST Files Users API](https://apis.io/collections/microsoft-yammer/open-microsoft-yammer-users-api/)
 
-#### Properties
+#### Security (2)
 
-- [Documentation](https://learn.microsoft.com/en-us/rest/api/yammer/rest-api-rate-limits)
-- [Postman Collection](collections/microsoft-yammer.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/microsoft-yammer.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
+Authentication, trust centre, and vulnerability disclosure.
 
-## Common Properties
+- [Microsoft Yammer Authentication](https://apis.io/security/microsoft-yammer/microsoft-yammer-authentication/)
+- [Microsoft Yammer Domain Security](https://apis.io/security/microsoft-yammer/microsoft-yammer-domain-security/)
 
-- [GitHub Organization](https://github.com/yammer)
-- [LinkedIn](https://www.linkedin.com/company/yammer-inc)
-- [Portal](https://engage.cloud.microsoft/)
-- [Authentication](https://learn.microsoft.com/en-us/rest/api/yammer/oauth-2)
-- [Terms of Service](https://www.microsoft.com/en-us/legal/terms-of-use)
-- [Privacy Policy](https://privacy.microsoft.com/en-us/privacystatement)
+#### OAuth scopes (1)
+
+The permissions the API asks for.
+
+- [Microsoft Yammer Scopes](https://apis.io/scopes/microsoft-yammer/microsoft-yammer-scopes/)
+
+#### Plans and pricing (1)
+
+Published plans, tiers and prices.
+
+- [Microsoft Yammer Plans Pricing](https://apis.io/plans/microsoft-yammer/microsoft-yammer-plans-pricing/)
+
+#### Rate limits (1)
+
+Published request limits.
+
+- [Microsoft Yammer Rate Limits](https://apis.io/rate-limits/microsoft-yammer/microsoft-yammer-rate-limits/)
+
+#### FinOps (1)
+
+What the API costs to run, by operation.
+
+- [Microsoft Yammer Finops](https://apis.io/finops/microsoft-yammer/microsoft-yammer-finops/)
+
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
+
+- [Website](https://www.microsoft.com/)
 - [Support](https://support.microsoft.com/)
+- [Terms of service](https://www.microsoft.com/en-us/legal/terms-of-use)
+- [Privacy policy](https://privacy.microsoft.com/en-us/privacystatement)
+- [GitHub](https://github.com/yammer)
 
-## Maintainers
+## API Evangelist rating
 
-**FN:** Kin Lane
-**Email:** kin@apievangelist.com
+**Kin Score 33.4** — thin · rubric 0.24.0 · scored 2026-10-17
+
+| Facet | Score |
+|---|---|
+| Discoverability | 64.3 |
+| Contract quality | 44.9 |
+| Contract governance | 0.0 |
+| Operational transparency | 10.5 |
+| Developer ergonomics | 35.7 |
+| Access clarity | 28.9 |
+
+**Agent readiness 22.9** — agent-aware
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | yes |
+| Agentic Access | derived (partial credit) |
+| Reversibility Documented | — |
+| MCP Server | — |
+| Auth Clarity | negotiable (partial credit) |
+| Idempotency | — |
+| Error Semantics | — |
+| OpenAPI Examples | — |
+| Rate Limit Signal | derived (partial credit) |
+| Event Surface Described | — |
+| Agent Skills | — |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | documented (partial credit) |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+
+**Regulatory alignment 29.4** — Horizontal (data, software, accessibility, platform)
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/microsoft-yammer/](https://apis.io/providers/microsoft-yammer/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for Microsoft Yammer: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/microsoft-yammer/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
